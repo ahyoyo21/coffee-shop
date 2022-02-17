@@ -1,0 +1,17 @@
+<h4>List of student</h4>
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>MAJOR</th>
+      <th>YEAR</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let s of student">
+    <td> {{ s.name }}</td>
+    <td> {{ s.email }}</td>
+    <td> {{ s.major }}</td>
+    <td> {{ s.year }}</td>
+  </tr>
+</table>

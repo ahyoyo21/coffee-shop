@@ -1,0 +1,17 @@
+<div>
+
+  Enter Your Name: <input type="text" value="{{name}}"/> <br/>
+  <button (click)="greet()">Greet Me!</button>
+
+
+  <h1 [innerText]="title"></h1>
+  <div>
+    Search for item:<input [(ngModel)]="item">
+    <button (click)="searchItems()">Search</button><br/>
+
+    Total Items found for {{searchItem}} is {{numItems}}
+    <button [disabled]="isDisabled">Add to Cart</button>
+  </div>
+
+
+</div>

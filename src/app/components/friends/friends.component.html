@@ -1,0 +1,48 @@
+<p>friends works!</p>
+<form [formGroup] = "friendForm">
+  <div>
+    <label>FriendName :</label>
+    <input [ngModel]="friend.name" formControlName="FriendName">
+  </div>
+  <div>
+    <label> Email :</label>
+    <input [ngModel]="friend.email" formControlName="FriendEmail">
+  </div>
+  <div>
+    <label> Age :</label>
+    <input [ngModel]="friend.age" formControlName="FriendAge">
+  </div>
+
+  <div>
+    <div>
+      <button (click)="changeDefaultName('CS')">Click to change the name</button>
+    </div>
+    <div>
+      <button [disabled]="friendForm.invalid" (click)="onSubmit(friendForm)">Submit to Data-Model</button>
+    </div>
+  </div>
+</form>
+
+<p><b>Retrieve values from the form:</b><br/>
+  {{ friendForm.value | json}} <br/>
+  {{ friendForm.get('FriendName')?.value}} <br/>
+  {{ friendForm.get('FriendEmail')?.value}} <br/>
+  {{ friendForm.get('FriendAge')?.value}} <br/>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let f of friends">
+      <td>{{ f.name }}</td>
+      <td>{{ f.email }}</td>
+      <td>{{ f.age }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,50 @@
+.shopname{
+  text-align: left;
+  font-size: 20px;
+  font-style: oblique;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: indigo;
+}
+.form{
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.input{
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0px;
+  border-radius: 5px 5px;
+  border-style:groove;
+  background-color:azure;
+}
+.option{
+  color: black;
+  background-color:azure;
+  border-radius: 5px 5px;
+  width: 50%;
+  padding: 10px 5px;
+}
+.radio{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button{
+  width: 50%;
+}
+.confirm{
+  font-size: 25px;
+  font-style: oblique;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: brown;
+}
+.order{
+  margin: 5px 3px;
+  padding: 5px 10px;
+  color: aliceblue;
+  background-color: darkcyan;
+  border-radius: 7px 7px;
+}
+.display{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
