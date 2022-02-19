@@ -44,7 +44,13 @@
   background-color: darkcyan;
   border-radius: 7px 7px;
 }
-.display{
+.name{
+  font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-style: oblique;
+  color: green;
 }
-
+.showorder{
+  color: green;
+}

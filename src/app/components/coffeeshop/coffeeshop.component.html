@@ -1,6 +1,8 @@
 <div class="shopname">
-  <h1>Awesome Shop!</h1>
+  <h1>SPK Shop!</h1>
 </div>
+
+<p class="name">{{this.coffee.value.namecoffee}}</p>
 
 <hr>
 
@@ -16,12 +18,32 @@
     <span style="color: red; font-size: 15px;" *ngIf="coffee.hasError('minlength','phonecoffee')">กรุณากรอกเบอร์โทรศัพท์ให้ครบ {{coffee.get('phonecoffee')?.errors?.['minlength'].requiredLength}} ตัวเลข, ต้องการอีก {{coffee.get('phonecoffee')?.errors?.['minlength'].requiredLength - coffee.get('phonecoffee')?.errors?.['minlength'].actualLength}} ตัวเลข</span>
   </div>
 
+  <!--
   <div>
     <select class="option">
       <option *ngFor="let Coffee of Choosecoffee" value="Coffee.value">{{Coffee.viewValue}}</option>
     </select>
   </div>
+  -->
+  <div>
+    <select formControlName="drinkcoffee" class="option">
+      <option value="" disabled selected>What would you like to drink?</option>
+      <option value="Cappuccino">Cappuccino</option>
+      <option value="Espresso">Espresso</option>
+      <option value="Latte">Latte</option>
+    </select>
+    <span style="color: red;" *ngIf="coffee.get('drinkcoffee')?.errors?.['required']"></span>
+  </div>
 
+  <div class="radio">
+    <p style="margin: 10px 5px;">Hot or Cold ?</p>
+    <input type="radio" id="Hot" value="Hot" formControlName="tempPreference" required>
+    <label for="Hot">Hot</label><br>
+    <input type="radio" id="Cold" value="Cold" formControlName="tempPreference" required>
+    <label for="Cold">Cold</label><br>
+    <span style="color: red;" *ngIf="coffee.get('tempPreference')?.errors?.['required']"></span>
+  </div>
+  <!--
   <div class="radio">
     <p style="margin: 10px 5px;">Hot or Cold ?</p>
     <input type="radio" name="select" value="Hot" id="Hot">
@@ -30,20 +52,25 @@
     <input type="radio" name="select" value="Cold" id="Cold">
     <label for="Cold">Cold</label>
   </div>
-
+  -->
+  <!--
   <div>
     <input type="checkbox" name="Order" id="Order">
     <label for="Order" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Send me a text message when my order is ready</label>
   </div>
+  -->
+  <div>
+    <input type="checkbox" id="sendText" value="true" formControlName="sendText">
+    <label for="sendText" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Send me a text message when my order is ready</label>
+    <span style="color: red;" *ngIf="coffee.get('sendText')?.errors?.['required']"></span>
+  </div>
 
-  <button  type="order" class="order">Place order</button>
+  <button  type="submit" class="order" (click)="submitorder()" [disabled]="!coffee.valid">Place order</button>
 
   <hr>
 
   <h1 class="confirm">Order Confirmation</h1>
-
-  <h3 class="display"><a href="" style="text-decoration: none;">Display your confirmation message</a></h3>
-
-  <h3 class="display">Data submitted: <a href="" style="text-decoration: none;">Display the submitted order</a></h3>
+  <h3 id="data" class="showorder">Your order will show here when you press » Place order «</h3>
+  <h4 id="time" ></h4>
 
 </form>
