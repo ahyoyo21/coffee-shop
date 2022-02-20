@@ -1,24 +1,28 @@
+<div class="title">
+  <h1>Form workshop!</h1>
+</div>
+<hr>
 <form [formGroup]="form">
-  <div>
-    Phone : <input formControlName="phoneNo">
+  <div class="form">
+    Phone : <input formControlName="phoneNo" class="input">
   </div>
-  <div>
-    Email : <input formControlName="email">
+  <div class="form">
+    Email : <input formControlName="email" class="input">
     <span style="color: red;" *ngIf="form.get('email')?.errors?.['email']">Email is invalid</span>
   </div>
-  <div>
-    Password : <input type="password" formControlName="password">
+  <div class="form">
+    Password : <input type="password" formControlName="password" class="input">
     <span style="color: red;" *ngIf="form.get('password')?.errors?.['required']">Password required</span>
     <span style="color: red;" *ngIf="form.hasError('minlength', 'password')">Password must be {{form.get('password')?.errors?.['minlength'].requiredLength}} characters long, we need another...{{form.get('password')?.errors?.['minlength'].requiredLength - form.get('password')?.errors?.['minlength'].actualLength}}... characters</span>
   </div>
-  <div>
-    Confirm Password : <input type="password" formControlName="confirmPassword">
+  <div class="form">
+    Confirm Password : <input type="password" formControlName="confirmPassword" class="input">
     <span style="color: red;" *ngIf="form.get('confirmPassword')?.errors?.['required']">Confirm Password required</span>
   </div>
 </form>
-<p>
+<p style="font-size: 20px; color: brown;">
   Form Data Below
 </p>
 <code>
-  {{form.value | json}}
+  <p class="json">{{form.value | json}}</p>
 </code>

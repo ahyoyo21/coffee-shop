@@ -15,7 +15,7 @@ export class GreetComponent implements OnInit {
 
   name:string = "supakorn";
   greet():void{
-    alert("Hello"+this.name);
+    alert("Hello :"+this.name);
     this.Logger.log("Testing greet method");
   }
 

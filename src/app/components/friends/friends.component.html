@@ -1,35 +1,40 @@
-<p>friends works!</p>
+<div class="title">
+  <h1>Friends workshop!</h1>
+</div>
+<hr>
 <form [formGroup] = "friendForm">
-  <div>
+  <div class="form">
     <label>FriendName :</label>
-    <input [ngModel]="friend.name" formControlName="FriendName">
+    <input [ngModel]="friend.name" formControlName="FriendName" class="input">
   </div>
-  <div>
+  <div class="form">
     <label> Email :</label>
-    <input [ngModel]="friend.email" formControlName="FriendEmail">
+    <input [ngModel]="friend.email" formControlName="FriendEmail" class="input">
   </div>
-  <div>
+  <div class="form">
     <label> Age :</label>
-    <input [ngModel]="friend.age" formControlName="FriendAge">
+    <input [ngModel]="friend.age" formControlName="FriendAge" class="input">
   </div>
 
   <div>
     <div>
-      <button (click)="changeDefaultName('CS')">Click to change the name</button>
+      <button (click)="changeDefaultName('CS')" class="button">Click to change the name</button>
     </div>
     <div>
-      <button [disabled]="friendForm.invalid" (click)="onSubmit(friendForm)">Submit to Data-Model</button>
+      <button [disabled]="friendForm.invalid" (click)="onSubmit(friendForm)" class="button">Submit to Data-Model</button>
     </div>
   </div>
 </form>
 
-<p><b>Retrieve values from the form:</b><br/>
+<p class="json"><b style="color: brown;" >Retrieve values from the form :</b><br/>
+  <br>
   {{ friendForm.value | json}} <br/>
   {{ friendForm.get('FriendName')?.value}} <br/>
   {{ friendForm.get('FriendEmail')?.value}} <br/>
   {{ friendForm.get('FriendAge')?.value}} <br/>
 </p>
 
+<!--
 <table>
   <thead>
     <tr>
@@ -46,3 +51,4 @@
     </tr>
   </tbody>
 </table>
+-->

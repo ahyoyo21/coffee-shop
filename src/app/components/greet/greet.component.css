@@ -1,0 +1,33 @@
+.title{
+  text-align: left;
+  font-size: 20px;
+  font-style: oblique;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: indigo;
+}
+.input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  background-color:azure;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form{
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.button{
+  margin: 5px 3px;
+  padding: 5px 10px;
+  color: aliceblue;
+  background-color: darkcyan;
+  border-radius: 7px 7px;
+}
+.store{
+  color: brown;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: oblique;
+}

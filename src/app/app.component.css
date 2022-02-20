@@ -1,0 +1,15 @@
+
+.link{
+  width: 250px;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: block;
+  background-color: aliceblue;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.link:hover{
+  background-color:black;
+  color: white;
+}
