@@ -5,21 +5,25 @@
 <form [formGroup] = "friendForm">
   <div class="form">
     <label>FriendName :</label>
-    <input [ngModel]="friend.name" formControlName="FriendName" class="input">
+    <!--<input [ngModel]="friend.name" formControlName="FriendName" class="input">-->
+    <input formControlName = "FriendName" class="input">
   </div>
   <div class="form">
     <label> Email :</label>
-    <input [ngModel]="friend.email" formControlName="FriendEmail" class="input">
+    <!--<input [ngModel]="friend.email" formControlName="FriendEmail" class="input">-->
+    <input formControlName = "FriendEmail" class="input">
   </div>
   <div class="form">
     <label> Age :</label>
-    <input [ngModel]="friend.age" formControlName="FriendAge" class="input">
+    <!--<input [ngModel]="friend.age" formControlName="FriendAge" class="input">-->
+    <input formControlName = "FriendAge" class="input">
   </div>
 
   <div>
+    <!--
     <div>
-      <button (click)="changeDefaultName('CS')" class="button">Click to change the name</button>
-    </div>
+      <button (click)="getFriend('CS')" class="button">Click to change the name</button>
+    </div>-->
     <div>
       <button [disabled]="friendForm.invalid" (click)="onSubmit(friendForm)" class="button">Submit to Data-Model</button>
     </div>
@@ -34,7 +38,6 @@
   {{ friendForm.get('FriendAge')?.value}} <br/>
 </p>
 
-<!--
 <table>
   <thead>
     <tr>
@@ -51,4 +54,3 @@
     </tr>
   </tbody>
 </table>
--->

@@ -10,6 +10,8 @@ import { GreetComponent } from './components/greet/greet.component';
 import { CoffeeshopComponent } from './components/coffeeshop/coffeeshop.component';
 import { FriendsComponent } from './components/friends/friends.component';
 
+import { PageService } from './share/page.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FriendsComponent } from './components/friends/friends.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    PageService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

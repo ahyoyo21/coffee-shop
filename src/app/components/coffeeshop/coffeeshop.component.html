@@ -18,13 +18,6 @@
     <span style="color: red; font-size: 15px;" *ngIf="coffee.hasError('minlength','phonecoffee')">กรุณากรอกเบอร์โทรศัพท์ให้ครบ {{coffee.get('phonecoffee')?.errors?.['minlength'].requiredLength}} ตัวเลข, ต้องการอีก {{coffee.get('phonecoffee')?.errors?.['minlength'].requiredLength - coffee.get('phonecoffee')?.errors?.['minlength'].actualLength}} ตัวเลข</span>
   </div>
 
-  <!--
-  <div>
-    <select class="option">
-      <option *ngFor="let Coffee of Choosecoffee" value="Coffee.value">{{Coffee.viewValue}}</option>
-    </select>
-  </div>
-  -->
   <div>
     <select formControlName="drinkcoffee" class="option">
       <option value="" disabled selected>What would you like to drink?</option>
@@ -43,22 +36,7 @@
     <label for="Cold">Cold</label><br>
     <span style="color: red;" *ngIf="coffee.get('tempPreference')?.errors?.['required']"></span>
   </div>
-  <!--
-  <div class="radio">
-    <p style="margin: 10px 5px;">Hot or Cold ?</p>
-    <input type="radio" name="select" value="Hot" id="Hot">
-    <label for="Hot">Hot</label>
-    <br>
-    <input type="radio" name="select" value="Cold" id="Cold">
-    <label for="Cold">Cold</label>
-  </div>
-  -->
-  <!--
-  <div>
-    <input type="checkbox" name="Order" id="Order">
-    <label for="Order" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Send me a text message when my order is ready</label>
-  </div>
-  -->
+
   <div>
     <input type="checkbox" id="sendText" value="true" formControlName="sendText">
     <label for="sendText" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Send me a text message when my order is ready</label>

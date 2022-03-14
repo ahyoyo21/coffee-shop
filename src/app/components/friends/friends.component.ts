@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Friend } from 'src/app/components/friends/friends';
+import { PageService } from 'src/app/share/page.service';
 
 @Component({
   selector: 'app-friends',
@@ -9,12 +10,12 @@ import { Friend } from 'src/app/components/friends/friends';
 })
 export class FriendsComponent implements OnInit {
 
-  friend: Friend;
-  friends: Array<Friend>=[];
+  //friend: Friend;
+  friends !: Friend[];
   friendForm !: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.friend = new Friend( 'ahyoyo', 'ahyoyo@gmail.com', 20 );
+  constructor(private fb: FormBuilder , private pageService:PageService) {
+    //this.friend = new Friend( 'ahyoyo', 'ahyoyo@gmail.com', 20 );
   }
 
   ngOnInit(): void {
@@ -23,19 +24,26 @@ export class FriendsComponent implements OnInit {
       FriendEmail: [''],
       FriendAge: [''],
     })
+    this.getFriendPage();
   }
-  changeDefaultName(str: string){
-    this.friend.name = str;
+  getFriendPage(){
+    this.friends = this.pageService.getfriend();
   }
-  onSubmit(f:FormGroup): void{
-    this.friend.name=f.get('friendName')?.value;
-    this.friend.name=f.get('friendEmail')?.value;
-    this.friend.name=f.get('friendAge')?.value;
+  //onSubmit(f:FormGroup): void{
+  //  this.friend.name=f.get('friendName')?.value;
+  //  this.friend.name=f.get('friendEmail')?.value;
+  //  this.friend.name=f.get('friendAge')?.value;
     /*Let form_record = new Friend(f.get('FriendName')?.value,
                                     f.get('FriendEmail')?.value,
                                     f.get('FriendAge')?.value),
     this.friends.push(form_record);
     */
-  }
+    onSubmit(f:FormGroup) :void{
+      let form_record =new Friend(f.get('FriendName')?.value,
+                                  f.get('FriendEmail')?.value,
+                                  f.get('FriendAge')?.value);
+      this.friends.push(form_record);
+      this.pageService.addFriend(form_record);
+    }
 
 }
